@@ -16,6 +16,7 @@ public class EfCoreContext : DbContext
     public DbSet<Author> Authors { get; set; }
     public DbSet<Tag> Tags { get; set; }
     public DbSet<PriceOffer> PriceOffers { get; set; }
+    public DbSet<Order> Orders { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -27,8 +28,8 @@ public class EfCoreContext : DbContext
             .WithMany()
             .OnDelete(DeleteBehavior.Restrict);
 
-        //modelBuilder.Entity<Book>()
-        //    .HasQueryFilter(p => !p.SoftDeleted);
+        modelBuilder.Entity<Book>()
+            .HasQueryFilter(p => !p.SoftDeleted);
 
         modelBuilder.Entity<Order>()
             .HasQueryFilter(x => x.CustomerId == _userId);
