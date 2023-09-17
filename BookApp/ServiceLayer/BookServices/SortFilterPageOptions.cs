@@ -1,7 +1,7 @@
 ﻿using ServiceLayer.BookServices.QueryObjects;
 using static ServiceLayer.BookServices.QueryObjects.BookListDtoSort;
 
-namespace ServiceLayer;
+namespace ServiceLayer.BookServices;
 
 public class SortFilterPageOptions
 {
@@ -17,12 +17,14 @@ public class SortFilterPageOptions
     public BooksFilterBy FilterBy { get; set; }
     public required string FilterValue { get; set; }
 
-    public int PageNum {
+    public int PageNum
+    {
         get { return _pageNum; }
         set { _pageNum = value; }
     }
 
-    public int PageSize {
+    public int PageSize
+    {
         get { return _pageSize; }
         set { _pageSize = value; }
     }
@@ -56,6 +58,6 @@ public class SortFilterPageOptions
     /// <returns></returns>
     private string GenerateCheckState()
     {
-        return $"{(int) FilterBy},{FilterValue},{PageSize},{NumPages}";
+        return $"{(int)FilterBy},{FilterValue},{PageSize},{NumPages}";
     }
 }

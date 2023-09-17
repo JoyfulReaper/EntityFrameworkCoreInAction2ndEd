@@ -1,4 +1,4 @@
-﻿namespace ServiceLayer;
+﻿namespace ServiceLayer.BookServices;
 
 public class DropdownTuple
 {

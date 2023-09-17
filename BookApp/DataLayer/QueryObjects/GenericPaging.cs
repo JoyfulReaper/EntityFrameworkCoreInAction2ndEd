@@ -7,7 +7,7 @@ public static class GenericPaging
         int pageNumZeroStart, int pageSize)
     {
         if (pageSize == 0)
-            throw new ArgumentOutOfRangeException(nameof(pageSize), "PageSize canno be zero.");
+            throw new ArgumentOutOfRangeException(nameof(pageSize), "PageSize cannot be zero.");
 
         if (pageNumZeroStart != 0)
         {
